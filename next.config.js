@@ -6,6 +6,6 @@ const nextConfig = {
 module.exports = {
   images: {
     loader: 'akamai',
-    path: '',
+    path: '/portfolio',
   },
 }
