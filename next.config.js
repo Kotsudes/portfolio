@@ -4,6 +4,10 @@ const nextConfig = {
 }
 
 module.exports = {
+  images: {
+    loader: 'akamai',
+    path: '',
+  },
   basePath: '/portfolio',
   assetPrefix: '/portfolio',
 }
