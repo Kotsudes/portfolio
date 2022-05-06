@@ -3,11 +3,13 @@ const nextConfig = {
   reactStrictMode: true,
 }
 
+const env = process.env.NODE_ENV
+
 module.exports = {
   images: {
     loader: 'akamai',
     path: '',
   },
-  basePath: '/portfolio',
-  assetPrefix: '/portfolio',
+  basePath: env == "development" ? '' : '/portfolio',
+  assetPrefix: env == "development" ? '' :  '/portfolio',
 }
