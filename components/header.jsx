@@ -2,6 +2,7 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import Image from 'next/image'
 
 
 const navigation = [
@@ -20,7 +21,7 @@ export default function Header() {
   const [clickedIndex, setclickedIndex] = useState(0)
 
   return (
-    <Disclosure as="nav" className="sticky top-0 bg-blue-900 drop-shadow-xl border-solide border-b border-yellow-600">
+    <Disclosure as="nav" className="z-50 sticky top-0 bg-blue-900 drop-shadow-xl border-solide border-b border-yellow-600">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -74,6 +75,8 @@ export default function Header() {
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-8 w-8 rounded-full"
+                        height={"2rem"}
+                        width={"2rem"}
                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                         alt=""
                       />
