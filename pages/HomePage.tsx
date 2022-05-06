@@ -25,14 +25,14 @@ function HomePage() {
               Texte de motivation
             </span>
             <div className="my-5 grid grid-cols-2 place-items-center gap-5">
-              <a href="https://www.linkedin.com/in/ridge-lowao/" target="_blank">
+              <a href="https://www.linkedin.com/in/ridge-lowao/" target="_blank" rel="noreferrer">
                 <Icon icon="akar-icons:linkedin-box-fill" color="white" width="3em" height="3em"/>
               </a>
-              <a href="https://github.com/Kotsudes" target="_blank">
+              <a href="https://github.com/Kotsudes" target="_blank" rel="noreferrer">
                 <Icon icon="akar-icons:github-fill" color="white" width="3em" height="3em" />
               </a>
             </div>
-            <a href="#Contact">
+            <a href="#Contact" rel="noreferrer">
               <button className="py-2 px-5 rounded-2xl bg-yellow-600" onClick={() => {
                           
                         }}>
