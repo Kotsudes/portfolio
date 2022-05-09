@@ -27,8 +27,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: npm run build
-    - run: npm run export
+    - run: npm run test
     - run: touch ./out/.nojekyll
     
     - name: Deploy 🚀
