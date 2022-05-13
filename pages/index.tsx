@@ -2,7 +2,6 @@ import type { NextPage } from 'next'
 import Header from "../components/header"
 import HomePage from "./HomePage"
 import About from './About'
-import { AB } from 'tabler-icons-react'
 
 
 

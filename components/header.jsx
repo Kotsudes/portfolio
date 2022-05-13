@@ -1,27 +1,31 @@
 /* This example requires Tailwind CSS v2.0+ */
-import React, { Fragment, useEffect, useState } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
-import Image from 'next/image'
-
+import React, { Fragment, useEffect, useState } from "react";
+import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
+import Image from "next/image";
+import profile from "../assets/Profile.jpg";
 
 const navigation = [
-  { name: 'Home', href: '#Home', current: true },
-  { name: 'About', href: '#About', current: false },
-  { name: 'Experience', href: '#Experience', current: false },
-  { name: 'Works', href: '#Works', current: false },
-  { name: 'Contact', href: '#Contact', current: false },
-]
+  { name: "Home", href: "#Home", current: true },
+  { name: "About", href: "#About", current: false },
+  { name: "Experience", href: "#Experience", current: false },
+  { name: "Works", href: "#Works", current: false },
+  { name: "Contact", href: "#Contact", current: false },
+];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function Header() {
-  const [clickedIndex, setclickedIndex] = useState(0)
+  const [clickedIndex, setclickedIndex] = useState(0);
+  const [navbar, setnavbar] = useState(false);
 
   return (
-    <Disclosure as="nav" className="z-50 sticky top-0 bg-blue-900 drop-shadow-xl border-solide border-b border-yellow-600">
+    <Disclosure
+      as="nav"
+      className="z-50 sticky top-0 bg-blue-900 drop-shadow-xl border-solide border-b border-gray-400"
+    >
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -49,17 +53,19 @@ export default function Header() {
                       <a
                         onClick={() => {
                           navigation[clickedIndex].current = false;
-                          setclickedIndex(index)
+                          setclickedIndex(index);
                           item.current = true;
                         }}
                         key={item.name}
                         href={item.href}
                         rel="noreferrer"
                         className={classNames(
-                          item.current ? 'bg-yellow-600 text-white' : 'text-gray-300 hover:bg-blue-700 hover:text-white',
-                          'px-3 py-2 rounded-md text-sm font-medium'
+                          item.current
+                            ? "bg-gray-400 text-white"
+                            : "text-gray-300 hover:bg-blue-700 hover:text-white",
+                          "px-3 py-2 rounded-md text-sm font-medium"
                         )}
-                        aria-current={item.current ? 'page' : undefined}
+                        aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
                       </a>
@@ -68,7 +74,6 @@ export default function Header() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-
                 {/* Profile dropdown */}
                 <Menu as="div" className="ml-3 relative">
                   <div>
@@ -76,14 +81,13 @@ export default function Header() {
                       <span className="sr-only">Open user menu</span>
                       <div className="relative h-12 w-12">
                         <Image
-                          src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                          src={profile}
                           className="rounded-full"
-                          layout='fill'
+                          layout="fill"
                           objectFit="cover"
                           alt=""
                         />
                       </div>
-                      
                     </Menu.Button>
                   </div>
                 </Menu>
@@ -97,17 +101,19 @@ export default function Header() {
                 <Disclosure.Button
                   onClick={() => {
                     navigation[clickedIndex].current = false;
-                    setclickedIndex(index)
+                    setclickedIndex(index);
                     item.current = true;
                   }}
                   key={item.name}
                   as="a"
                   href={item.href}
                   className={classNames(
-                    item.current ? 'bg-yellow-600 text-white' : 'text-gray-300 hover:bg-blue-700 hover:text-white',
-                    'block px-3 py-2 rounded-md text-base font-medium'
+                    item.current
+                      ? "bg-gray-400 text-white"
+                      : "text-gray-300 hover:bg-blue-700 hover:text-white",
+                    "block px-3 py-2 rounded-md text-base font-medium"
                   )}
-                  aria-current={item.current ? 'page' : undefined}
+                  aria-current={item.current ? "page" : undefined}
                 >
                   {item.name}
                 </Disclosure.Button>
@@ -117,5 +123,5 @@ export default function Header() {
         </>
       )}
     </Disclosure>
-  )
+  );
 }
